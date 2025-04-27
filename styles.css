@@ -1,0 +1,207 @@
+/* Menggunakan font ceria */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Baloo+Da&display=swap');
+
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body dengan latar belakang gambar animasi */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/lucubg.jpg'); /* Gambar latar belakang */
+    background-size: cover;  /* Gambar menutupi seluruh layar */
+    background-position: center center; /* Memastikan gambar berada di tengah */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+    margin: 0;
+    padding: 0;
+}
+
+.parallax {
+    background-image: url('images/parallax-lucubg.jpg');  /* Gambar latar belakang */
+    height: 100vh;  /* Memastikan parallax mengisi layar penuh */
+    background-attachment: fixed;  /* Efek parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header dengan warna cerah */
+header {
+    background-color: #da47ff;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 20px auto;
+    animation: bounceIn 1s ease-out;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar dengan animasi */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #fff;
+    padding: 14px 30px;
+    background-color: #329ccd;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #287fa7;
+    transform: scale(1.1);
+}
+
+/* Animasi untuk efek masuk */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animasi untuk soal latihan */
+.question {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tombol dengan animasi */
+.btn {
+    font-size: 1.5em;
+    padding: 15px 35px;
+    background-color: #a51ab8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #FF6347;
+}
+
+/* Animasi untuk evaluasi dan video link */
+#evaluasi {
+    opacity: 0;
+    transform: scale(0.5);
+    animation: popUp 1s ease-out forwards;
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#videoLink {
+    display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards 0.5s;
+}
+
+/* Gambar karakter */
+.character {
+    width: 200px;
+    animation: bounceIn 2s infinite;
+}
+
+/* Kembali ke Home */
+.start-btn {
+    font-size: 1.5em;
+    padding: 15px 30px;
+    background-color: #323ccd;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #2878a7;
+    transform: scale(1.1);
+}
+
+/* Animasi untuk karakter */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efek karakter */
+.character:hover {
+    transform: rotate(10deg) scale(1.1);
+    transition: 0.3s ease-in-out;
+}

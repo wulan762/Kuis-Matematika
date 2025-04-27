@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluasi Kuis - Kuis Matematika</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Evaluasi Kuis Matematika</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="btn">Home</a></li>
+                <li><a href="latihan.html" class="btn">Latihan</a></li>
+                <li><a href="evaluasi.html" class="btn">Evaluasi</a></li>
+                <li><a href="about.html" class="btn">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Hasil Evaluasi</h2>
+        <div id="evaluasi">
+            <p id="feedback"></p>
+            <a href="video.html" class="btn" id="videoLink">Tonton Video Pembahasan</a>
+        </div>
+        <script>
+            const hasilLatihan = JSON.parse(localStorage.getItem("hasilLatihan"));
+            const feedbackElement = document.getElementById("feedback");
+            const videoLink = document.getElementById("videoLink");
+
+            if (hasilLatihan) {
+                feedbackElement.innerHTML = `
+                    <strong>Hasil Jawaban:</strong><br>
+                    1. Soal 1: ${hasilLatihan.soal1}<br>
+                    2. Soal 2: ${hasilLatihan.soal2}<br>
+                    3. Soal 3: ${hasilLatihan.soal3}<br>
+                    4. Soal 4: ${hasilLatihan.soal4}<br>
+                    5. Soal 5: ${hasilLatihan.soal5}<br>
+                    6. Soal 6: ${hasilLatihan.soal6}<br>
+                    7. Soal 7: ${hasilLatihan.soal7}<br>
+                    8. Soal 8: ${hasilLatihan.soal8}<br>
+
+                `;
+                videoLink.style.display = "block";
+            } else {
+                feedbackElement.innerHTML = "Silakan selesaikan latihan terlebih dahulu!";
+                videoLink.style.display = "none";
+            }
+        </script>
+    </main>
+</body>
+</html>
